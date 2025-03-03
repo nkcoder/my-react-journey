@@ -4,6 +4,8 @@ import { useState } from "react";
 const FetchDataEffect = () => {
   const [posts, setPosts] = useState([]);
 
+  // `useEffect` is a Hook, so you can only call it at the top level of your component.
+  // For conditional rendering, you can put the condition inside the `useEffect` function.
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
