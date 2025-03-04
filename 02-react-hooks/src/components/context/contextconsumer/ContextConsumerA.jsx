@@ -1,9 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import ContextConsumerB from './ContextConsumerB';
-
-export const NameContext = createContext();
-export const AgeContext = createContext();
-
+import { AgeContext, NameContext } from './ContextData';
 const ContextConsumerA = () => {
   const [name, setName] = useState('John');
   const [age, setAge] = useState(20);

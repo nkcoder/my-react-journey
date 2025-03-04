@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { AgeContext, NameContext } from './ContextConsumerA';
+import { AgeContext, NameContext } from './ContextData';
 
 const ContextConsumerC = () => {
   return (
