@@ -1,9 +1,10 @@
 import './App.css';
-import ContextConsumerA from './components/context/contextconsumer/ContextConsumerA';
+import UseContextA from './components/context/usecontext/UseContextA';
+
 function App() {
   return (
     <>
-      <ContextConsumerA />
+      <UseContextA />
     </>
   );
 }
