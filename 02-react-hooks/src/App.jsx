@@ -1,10 +1,15 @@
 import './App.css';
-import UseContextA from './components/context/usecontext/UseContextA';
+import UserProfile from './components/context/exercise/UserProfile';
+import { UserProvider } from './components/context/exercise/UserProvider';
+import UserUpdater from './components/context/exercise/UserUpdater';
 
 function App() {
   return (
     <>
-      <UseContextA />
+      <UserProvider>
+        <UserProfile />
+        <UserUpdater />
+      </UserProvider>
     </>
   );
 }
