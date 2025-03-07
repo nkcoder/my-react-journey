@@ -1,18 +1,26 @@
 import React, { useReducer, useState } from 'react';
-import { reducer } from './counterReducer';
+import { counterReducer } from './counterReducer';
 
 const initialState = { count: 0 };
 
 const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(counterReducer, initialState);
   const [step, setStep] = useState(1);
+
+  const handleIncrement = () => {
+    dispatch({ type: 'increment', step });
+  };
+
+  const handleDecrement = () => {
+    dispatch({ type: 'decrement', step });
+  };
 
   return (
     <div>
-      <h1>{state.count}</h1>
+      <h1>Count: {state.count}</h1>
       <input type="number" value={step} onChange={(e) => setStep(Number(e.target.value))} />
-      <button onClick={() => dispatch({ type: 'increment', step })}>Increment</button>
-      <button onClick={() => dispatch({ type: 'decrement', step })}>Decrement</button>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
     </div>
   );
 };

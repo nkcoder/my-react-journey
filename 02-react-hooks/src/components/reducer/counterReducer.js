@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+const counterReducer = (state, action) => {
   const { count } = state;
   const { type, step } = action;
   console.log(state, action);
@@ -12,4 +12,4 @@ const reducer = (state, action) => {
   }
 };
 
-export { reducer };
+export { counterReducer };
