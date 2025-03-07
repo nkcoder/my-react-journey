@@ -1,9 +1,12 @@
 import './App.css';
-import Counter from './components/reducer/Counter';
+import FocusInput from './components/useRef/FocusInput';
+import Timer from './components/useRef/Timer';
+
 function App() {
   return (
     <>
-      <Counter />
+      <FocusInput />
+      <Timer />
     </>
   );
 }
