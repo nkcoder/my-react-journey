@@ -1,15 +1,9 @@
 import './App.css';
-import UserProfile from './components/context/exercise/UserProfile';
-import { UserProvider } from './components/context/exercise/UserProvider';
-import UserUpdater from './components/context/exercise/UserUpdater';
-
+import Counter from './components/reducer/Counter';
 function App() {
   return (
     <>
-      <UserProvider>
-        <UserProfile />
-        <UserUpdater />
-      </UserProvider>
+      <Counter />
     </>
   );
 }
