@@ -6,7 +6,7 @@ Learning React.
 npm create vite@latest my-app -- --template react
 ```
 
-**Next**: useReducer (3:25:24)
+**Next**: custom hooks (3:50:40)
 
 ## References
 

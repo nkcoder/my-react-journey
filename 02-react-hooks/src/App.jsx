@@ -1,12 +1,9 @@
 import './App.css';
-import FocusInput from './components/useRef/FocusInput';
-import Timer from './components/useRef/Timer';
-
+import TodoList from './components/customHook/TodoList';
 function App() {
   return (
     <>
-      <FocusInput />
-      <Timer />
+      <TodoList />
     </>
   );
 }
