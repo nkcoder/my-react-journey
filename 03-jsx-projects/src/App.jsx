@@ -1,10 +1,11 @@
 import './App.css'
-import Counter from './components/Counter/Counter'
+import Todo from './components/todo/Todo'
 
 function App() {
 
   return (
-    <Counter />
+    // <Counter />
+    <Todo />
   )
 }
 
