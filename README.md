@@ -2,6 +2,8 @@ Learning React.
 
 ## Create a new React app
 
+Change `my-app` to your project name.
+
 ```bash
 npm create vite@latest my-app -- --template react
 ```
