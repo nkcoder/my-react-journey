@@ -6,6 +6,14 @@ Learning React.
 npm create vite@latest my-app -- --template react
 ```
 
+## Run
+
+```bash
+cd my-app
+npm install
+npm run dev
+```
+
 **Next**: custom hooks (3:50:40)
 
 ## References
