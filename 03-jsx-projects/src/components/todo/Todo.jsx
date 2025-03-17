@@ -5,11 +5,13 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
+  const generateId = () => Math.floor(Math.random() * 100);
+
   const addTodo = () => {
     setTodos((todos) =>
       todos.concat({
         text: input,
-        id: Math.floor(Math.random() * 100),
+        id: generateId(),
       })
     );
     setInput('');
