@@ -1,0 +1,76 @@
+.sidebar-label-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.sidebar-label-container:hover {
+  color: #333;
+  transform: translateX(3px);
+}
+
+/* Hide the default radio input */
+.sidebar-label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+/* Style the checkmark/indicator */
+.sidebar-label-container:hover .checkmark {
+  border-color: #d5ab55;
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+  background-color: white;
+  border-color: #d5ab55;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.sidebar-label-container .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d5ab55;
+}
+
+/* For color options */
+.color-checkmark {
+  border: 2px solid transparent;
+}
+
+.sidebar-label-container input:checked ~ .color-checkmark {
+  border-color: #d5ab55;
+}

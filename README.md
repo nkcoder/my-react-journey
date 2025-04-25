@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-**Next**: custom hooks (3:50:40)
+**Next**: TypeScript (06:43:00)
 
 ## References
 

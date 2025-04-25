@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import { Navigation } from './Navigation/Navigation';
-import { Products } from './Products/Products';
-import { Recommended } from './Recommended/Recommended';
-import { Sidebar } from './Sidebar/Sidebar';
+import { Navigation } from './Navigation/Navigation.jsx';
+import { Products } from './Products/Products.jsx';
+import { Recommended } from './Recommended/Recommended.jsx';
+import { Sidebar } from './Sidebar/Sidebar.jsx';
 import { products } from './db/data.jsx';
 
 function App() {

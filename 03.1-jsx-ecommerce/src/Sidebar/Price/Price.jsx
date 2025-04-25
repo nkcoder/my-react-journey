@@ -4,7 +4,7 @@ import './Price.css';
 
 const Price = ({ handleChange }) => {
   return (
-    <div className="sidebar-title">
+    <div>
       <h2 className="sidebar-title price-title">Price</h2>
       <Input handleInputChange={handleChange} value="" title="All" name="price" color="#333" />
       <Input handleInputChange={handleChange} value="50" title="$0 - $50" name="price" color="#333" />
