@@ -1,0 +1,21 @@
+.btn {
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #323232;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #323232;
+  color: #fff;
+}
+
+.btn.active {
+  background-color: #323232;
+  color: #fff;
+}
