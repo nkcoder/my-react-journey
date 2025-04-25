@@ -1,17 +1,15 @@
 import { useState } from 'react';
-import './App.css';
-import { Navigation } from './Navigation/Navigation.jsx';
-import { Products } from './Products/Products.jsx';
-import { Recommended } from './Recommended/Recommended.jsx';
-import { Sidebar } from './Sidebar/Sidebar.jsx';
-import { products } from './db/data.jsx';
+import Navigation from './components/Navigation';
+import Products from './components/Products';
+import Recommended from './components/Recommended';
+import Sidebar from './components/Sidebar';
+import { products } from './data/products';
 
 function App() {
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState('');
   const [color, setColor] = useState('');
   const [company, setCompany] = useState('');
-
   const [search, setSearch] = useState('');
 
   const handleSearchChange = (e) => {
@@ -34,51 +32,67 @@ function App() {
     setCompany(e.target.value);
   };
 
-  const filterProducts = (category, price, color, search) => {
-    console.log(`search: ${search}, category: ${category}, price: ${price}, color: ${color}, products: ${products.length}`);
+  const filterProducts = () => {
+    let filteredProducts = products;
 
-    let result = products;
-    if (search && search.length > 0) {
-      result = result.filter((product) => product.title.toLowerCase().includes(search.toLowerCase()));
+    if (search) {
+      filteredProducts = filteredProducts.filter((product) => 
+        product.title.toLowerCase().includes(search.toLowerCase())
+      );
     }
-    console.log(`Products after search: ${result.length}`);
 
-    if (category && category.length > 0) {
-      result = result.filter((product) => product.category === category);
+    if (category) {
+      filteredProducts = filteredProducts.filter((product) => 
+        product.category === category
+      );
     }
-    console.log(`Products after category: ${result.length}`);
 
-    if (price && price.length > 0) {
-      result = result.filter((product) => product.newPrice === price);
+    if (price) {
+      filteredProducts = filteredProducts.filter((product) => 
+        product.newPrice === price
+      );
     }
-    console.log(`Products after price: ${result.length}`);
 
-    if (company && company.length > 0) {
-      result = result.filter((product) => product.company === company);
+    if (company) {
+      filteredProducts = filteredProducts.filter((product) => 
+        product.company === company
+      );
     }
-    console.log(`Products after company: ${result.length}`);
 
-    if (color && color.length > 0) {
-      result = result.filter((product) => product.color === color);
+    if (color) {
+      filteredProducts = filteredProducts.filter((product) => 
+        product.color === color
+      );
     }
-    console.log(`Products after color: ${result.length}`);
 
-    console.log(`result: ${result.length}`);
-
-    return result;
-  }
+    return filteredProducts;
+  };
 
   return (
-    <div className="app-container">
-      <div className="sidebar-wrapper">
-        <Sidebar handleCategoryChange={handleCategoryChange} handlePriceChange={handlePriceChange} handleColorChange={handleColorChange} />
+    <div className="grid grid-cols-[15rem_1fr] min-h-screen">
+      {/* Sidebar */}
+      <div className="border-r border-gray-200 bg-white shadow-sm">
+        <Sidebar 
+          handleCategoryChange={handleCategoryChange}
+          handlePriceChange={handlePriceChange}
+          handleColorChange={handleColorChange}
+        />
       </div>
-      <Navigation handleSearchChange={handleSearchChange} search={search} />
-      <div className="recommended-wrapper">
-        <Recommended handleClick={handleCompanyChange} />
-      </div>
-      <div className="products-wrapper">
-        <Products products={filterProducts(category, price, color, search)} />
+
+      {/* Main Content */}
+      <div className="flex flex-col gap-2" style={{ gap: '0.5rem' }}>
+        {/* Navigation */}
+        <Navigation handleSearchChange={handleSearchChange} search={search} />
+        
+        {/* Recommended */}
+        <div className="p-4 border-b border-gray-100">
+          <Recommended handleClick={handleCompanyChange} />
+        </div>
+        
+        {/* Products */}
+        <div className="p-4">
+          <Products products={filterProducts()} />
+        </div>
       </div>
     </div>
   );
